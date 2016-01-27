@@ -1,0 +1,76 @@
+/* AUTHOR TITLE */
+
+.authortitle {
+	display: table-cell;
+	vertical-align: middle;
+	width: 700px;
+	position: relative;
+	z-index: 1000;
+	margin: 0;
+	background: transparent;
+	border-top: 0;
+
+	.info {
+		overflow: hidden;
+		margin-top: 10%;
+
+		img {
+			width: 80px;
+			height: 80px;
+		}
+	}
+
+	.profile {
+		display: inline-block;
+		border-radius: 90px;
+		margin-right: 5%;
+	}
+
+	.meta {
+		display: inline-block;
+		vertical-align: 20px;
+
+		.twittertag {
+			color: #6E6E6E;
+		}
+	}
+
+	h3 {
+		color: #fff;
+		font-family: $font_header;
+		font-weight: 600;
+		font-size: 29px;
+	}
+
+	p {
+		font-size: 20px;
+		color: #939393;
+		margin: 20px 0;
+	}
+
+	.authorsocial li a {
+		line-height: 36px;
+	}
+
+	@media (max-width: 880px) {
+		width: 70%;
+
+		.authorsocial {
+			display: none;
+		}
+	}
+
+	@media (max-width: 560px) {
+		width: 80%;
+
+		.profile {
+			display: none;
+		}
+	}
+
+	@media (max-height: 700px) {
+		p {
+			display: none;
+		}
+	}
+}

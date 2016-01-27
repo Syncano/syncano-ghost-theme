@@ -1,0 +1,27 @@
+{{! 
+	
+	WIDGET - AUTHOR PROFILE
+	- Configuration of this file is not required.  
+
+}}
+
+	{{#post}}
+		{{#author}}
+			<section class="widget authorprofile">
+				{{! WIDGET HEADER }}
+				<div class="info">
+					<a href="{{url}}" class="profile gravatar"><img src="{{image}}" itemprop="image" alt="{{name}}" data-no-retina="true"></a>
+					<div class="meta">
+						<span class="title">Author</span>
+						<h3 itemprop="name">
+							<a href="{{url}}" itemprop="url" rel="author">{{name}}</a>
+						</h3>
+					</div>
+				</div>
+				{{! WIDGET CONTENT }}
+				{{#if bio}}
+					<p>{{bio}}</p>
+				{{/if}}
+			</section>
+		{{/author}}
+	{{/post}}

@@ -1,0 +1,17 @@
+{{! 
+	
+	PAGINATION
+	- Configuration of this file is not required. 
+
+}}
+
+	<nav class="pagination">
+		<div class="wrapper">
+			{{#if prev}}
+				<a href="{{page_url prev}}" class="button rounded light next"><span class="sub"><i class="fa fa-chevron-left"></i></span><span class="main">Newer Posts</span></a>
+			{{/if}}
+			{{#if next}}
+				<a href="{{page_url next}}" class="button rounded light previous"><span class="main">Older Posts</span><span class="sub"><i class="fa fa-chevron-right"></i></span></a>
+			{{/if}}
+		</div>
+	</nav>

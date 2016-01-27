@@ -1,0 +1,153 @@
+/* POST BOTTOM */
+
+.postbottom {
+	margin: 90px auto 80px;
+
+	ul.tags {
+		float: left;
+
+		li:first-child {
+			display: none;
+		}
+	}
+
+	.info {
+		clear: both;
+		overflow: hidden;
+
+		.tags a:first-child {
+			display: none;
+		}
+	}
+
+	.categories {
+		.category {
+			float: right;
+			width: 30%;
+			display: none;
+			padding: 12px 25px;
+			border-radius: 3px;
+			background: #0085c3;
+			color: #fff;
+			font-family: $font_sub_header;
+			font-weight: 400;
+			font-size: 11px;
+			line-height: normal;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		.category:first-child {
+			display: block;
+		}
+	}
+
+	.shareoptions {
+		margin-top: 30px;
+		clear: both;
+		overflow: hidden;
+	}
+
+	.permalink {
+		width: 65%;
+		overflow: hidden;
+		display: block;
+		float: left;
+		margin-top: 11px;
+		font-family: $font_sub_header;
+		font-weight: 400;
+		font-size: 11px;
+		line-height: normal;
+		color: #858585;
+
+		&:hover {
+			color: #575757;
+		}
+	}
+
+	.sharebuttons {
+		padding: 0;
+		margin: 0;
+		float: right;
+
+		li {
+			display: block;
+			float: left;
+			margin-left: 8px;
+		}
+
+		li:first-child {
+			font-family: $font_sub_header;
+			font-weight: 400;
+			font-size: 11px;
+			line-height: normal;
+			text-transform: uppercase;
+			color: #868686;
+			margin-top: 11px;
+		}
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		height: 1px;
+		width: 70%;
+		margin: 0 auto 90px;
+		background: #dfdfdf;
+	}
+
+	@media (max-width: 640px) {
+		margin: 45px auto 40px;
+
+		&:before {
+			margin-bottom: 40px;
+		}
+	}
+
+	@media (max-width: 450px) {
+		margin: 30px auto 35px;
+
+		&:before {
+			margin-bottom: 35px;
+		}
+	}
+
+	@media (max-width: 800px) {
+		.permalink {
+			display: none;
+		}
+	}
+
+	@media (max-width: 630px) {
+		text-align: center;
+
+		.tags {
+			width: 100%;
+			float: none;
+			text-align: center;
+
+			a {
+				float: none;
+				display: inline-block;
+			}
+		}
+
+		.categories .category {
+			clear: both;
+			float: none;
+			width: auto;
+			margin-top: 30px;
+		}
+
+		.sharebuttons {
+			float: none;
+			margin: 0 auto;
+			overflow: hidden;
+
+			li {
+				float: none;
+				display: inline-block;
+			}
+		}
+	}
+}

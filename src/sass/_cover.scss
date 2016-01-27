@@ -1,0 +1,105 @@
+/* COVER */
+
+.cover {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: #080808;
+	display: table;
+	overflow: hidden;
+
+	&.short {
+		height: 65vh;
+	}
+
+	.patternbg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url("../img/pattern_bg.png");
+		display: none;
+	}
+
+	@media (max-width: 560px) {
+		height: 60vh;
+	}
+
+	@media (max-height: 850px) {
+		height: 90vh;
+	}
+}
+
+.cover .background {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	background-position: center;
+
+	@include cover;
+
+	@include transform(translate3d(0, 0, 0));
+}
+
+.mouse {
+	width: 25px;
+	position: absolute;
+	height: 36px;
+	border-radius: 15px;
+	border: 2px solid #888;
+	border: 2px solid rgba(#fff, 0.27);
+	bottom: 40px;
+	right: 40px;
+	margin-left: -12px;
+	cursor: pointer;
+
+	@include transition(border-color 0.2s ease-in);
+
+	.scroll {
+		display: block;
+		margin: 6px auto;
+		width: 3px;
+		height: 6px;
+		border-radius: 4px;
+		background: #b0b1b1;
+
+		@include animation-duration(2s);
+
+		@include animation-name(scroll);
+
+		@include animation-iteration-count(infinite);
+	}
+
+	&:hover {
+		border: 2px solid rgba(#fff, 0.4);
+	}
+
+	@media (max-width: 560px) {
+		visibility: hidden;
+	}
+}
+
+.cover .posttitle {
+	position: relative;
+}
+
+body.page-template .cover {
+	height: 70vh;
+}
+
+.vjs-poster, .vjs-loading-spinner, .vjs-text-track-display, .vjs-control-bar, .vjs-caption-settings {
+	display: none;
+}
+
+.cover.author, .cover.category, .cover.search, .cover.archive, body.paged .cover {
+	height: 65vh;
+}
+
+body.single .cover .background {
+	@include animation(fadeinpost 0.5s ease-in-out);
+}
+
+body.error404 .mouse {
+	visibility: hidden;
+}

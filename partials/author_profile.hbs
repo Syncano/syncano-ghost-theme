@@ -1,0 +1,27 @@
+{{! 
+	
+	AUTHOR PROFILE
+	- Configuration of this file is not required. 
+
+}}
+
+	{{#author}}
+		<section class="widget authorprofile">
+			<div class="wrapper">
+				<div class="info">
+					{{#if image}}
+						<a href="{{url}}" class="profile gravatar"><img src="{{image}}" alt="{{name}}"></a>
+					{{else}}
+						<a href="{{url}}" class="profile gravatar"><img src="/shared/img/user-image.png" alt="{{name}}"></a>
+					{{/if}}
+					<div class="meta">
+						<span class="title">Author</span>
+						<h3><a href="{{url}}">{{name}}</a></h3>
+					</div>
+				</div>
+				{{#if bio}}
+					<p>{{bio}}</p>
+				{{/if}}
+			</div>
+		</section>
+	{{/author}}

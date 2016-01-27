@@ -1,0 +1,35 @@
+/* DRAWER */
+
+.drawer {
+	position: fixed;
+	z-index: 3000;
+	width: 400px;
+	height: 100%;
+	top: 0;
+	right: 0;
+	background: #ffffff;
+	overflow-y: auto;
+	border-left: 1px solid #eaeaea;
+	padding: 0 35px;
+	-webkit-overflow-scrolling: touch;
+
+	@include transform(translateX(100%));
+
+	@include transition(transform 500ms ease-in-out);
+
+	&.show {
+		@include transform(translateX(0%));
+	}
+
+	.closedrawer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 20px;
+		cursor: pointer;
+	}
+
+	@media (max-width: 420px) {
+		width: 325px;
+	}
+}

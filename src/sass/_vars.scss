@@ -1,0 +1,151 @@
+/*
+	VARIABLES
+*/
+
+/* COLORS */
+
+$accent_color: #282828;
+$accent_dark_color: #000;
+$accent_darker_color: #000;
+
+/* SOCIAL */
+
+$twitter_color: #55acee;
+$facebook_color: #3b5998;
+$google_color: #dd4b39;
+$dribbble_color: #ea4c89;
+$instagram_color: #3f729b;
+$github_color: #333;
+$github_color_light: #999999;
+$rss_color: #ee802f;
+$youtube_color: #c4302b;
+$pinterest_color: #c8232c;
+$linkedin_color: #0e76a8;
+$reddit_color: #5f99cf;
+$skype_color: #00aff0;
+$tumblr_color: #35465c;
+$vine_color: #00b488;
+$vk_color: #45668e;
+$flickr_color: #ff0084;
+$stackoverflow_color: #fe7a15;
+$twitch_color: #6441a5;
+$vimeo_color: #1ab7ea;
+$weibo_color: #d72928;
+$email_color: #76b852;
+$soundcloud_color: #ff8800;
+
+/* FONTS */
+
+$font_main: "Oxygen", "Arial", Sans-Serif;
+$font_header: "Varela Round", "Arial", Sans-Serif;
+$font_sub_header: "Montserrat", "Arial", Sans-Serif;
+$font_body: "Noto Serif", "Times New Roman", Serif;
+
+/* MIXIN */
+
+@mixin cover {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+@mixin transparentbg($bg_image, $overlay_opacity: "", $overlay_color: "") {
+	background: -webkit-linear-gradient(left, rgba($overlay_color, $overlay_opacity), rgba($overlay_color, $overlay_opacity)), url($bg_image) no-repeat;
+	background: -moz-linear-gradient(left, rgba($overlay_color, $overlay_opacity), rgba($overlay_color, $overlay_opacity)), url($bg_image) no-repeat;
+	background: -o-linear-gradient(left, rgba($overlay_color, $overlay_opacity), rgba($overlay_color, $overlay_opacity)), url($bg_image) no-repeat;
+	background: -ms-linear-gradient(left, rgba($overlay_color, $overlay_opacity), rgba($overlay_color, $overlay_opacity)), url($bg_image) no-repeat;
+}
+
+/* ANIMATIONS */
+
+@include keyframes(fadein) {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+
+@include keyframes(fadeinpost) {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 0.2;
+	}
+}
+
+
+@include keyframes(slidefade) {
+	from {
+		@include transform(translateY(-40px));
+
+		opacity: 0;
+	}
+
+	to {
+		@include transform(translateY(0px));
+
+		opacity: 1;
+	}
+}
+
+
+@include keyframes(scroll) {
+	0% {
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 1;
+		-webkit-transform: translateY(0px);
+		-ms-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translateY(10px);
+		-ms-transform: translateY(10px);
+		transform: translateY(10px);
+	}
+}
+
+
+@mixin trans-prefix($value, $prefix: "") {
+	$slice: str-slice(inspect($value), 0, 9);
+
+	@if $slice == "transform" {
+		#{$prefix}transition: #{$prefix}#{$value};
+	}
+
+	@else {
+		#{$prefix}transition: $value;
+	}
+}
+
+@mixin transition($properties...) {
+	@if length($properties) > 1 {
+		$spec: ();
+
+		@for $i from 1 through length($properties) {
+			$spec: append($spec, nth($properties, $i), comma);
+		}
+	}
+
+	@else {
+		$spec: $properties;
+	}
+
+	@include trans-prefix($spec, -webkit-);
+
+	@include trans-prefix($spec, -moz-);
+
+	@include trans-prefix($spec);
+}

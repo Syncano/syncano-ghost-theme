@@ -1,0 +1,23 @@
+/* PAGE WRAPPER */
+
+.pagewrapper {
+	position: relative;
+	left: 0;
+
+	@include transition(left 500ms ease-in-out);
+
+	-webkit-transform: translate3d(0, 0, 0);
+
+	&.slide {
+		cursor: pointer;
+		left: -400px;
+
+		@media (max-width: 420px) {
+			left: -325px;
+		}
+	}
+}
+
+body.home-template.no-header .pagewrapper, body.archive-template.no-header .pagewrapper {
+	margin-top: 80px;
+}

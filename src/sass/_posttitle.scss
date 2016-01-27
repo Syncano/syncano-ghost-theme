@@ -1,0 +1,211 @@
+/* POST TITLE */
+
+.posttitle {
+	.meta .category {
+		position: relative;
+	}
+
+	.meta .date, .meta .readtime {
+		display: none;
+	}
+
+	h1, h2 {
+		margin: 35px 0;
+	}
+
+	.title a {
+		color: #fff;
+	}
+
+	.excerpt {
+		margin: 35px 0;
+		font-family: $font_header;
+		font-size: 24px;
+		line-height: 38px;
+		color: #939393;
+		letter-spacing: -1px;
+	}
+
+	.author {
+		display: none;
+	}
+
+	hr {
+		border: 0;
+		height: 3px;
+		width: 10%;
+		background: #5a5a5a;
+		margin: 0;
+	}
+
+	&:after {
+		display: block;
+		content: '';
+		clear: both;
+		height: 4px;
+		width: 15%;
+		background: #6a6a6a;
+	}
+
+	&.middle {
+		text-align: center;
+
+		.meta .category {
+			float: none;
+			margin: 0 auto;
+		}
+
+		&:after {
+			margin: 0 auto;
+		}
+	}
+
+	&.center {
+		display: table-cell;
+		vertical-align: middle;
+		width: 700px;
+
+		h1 {
+			color: #fff;
+		}
+
+		h1 a:hover, h2 a:hover {
+			color: #fff;
+		}
+
+		@media (max-width: 880px) {
+			width: 70%;
+			text-align: center;
+		}
+
+		@media (max-width: 560px) {
+			width: 85%;
+			vertical-align: bottom;
+		}
+
+		@media (max-width: 880px) and (max-height: 850px) {
+			&:after {
+				display: none;
+			}
+
+			.excerpt {
+				margin-bottom: 0;
+			}
+		}
+
+		@media (max-width: 880px) and (max-height: 500px) {
+			h1, h2 {
+				font-size: 24px;
+			}
+		}
+	}
+
+	@media (max-width: 880px) {
+		h1, h2 {
+			font-size: 42px;
+			line-height: 52px;
+		}
+
+		.meta .category {
+			font-size: 10px;
+			margin: 0 auto;
+			float: none;
+		}
+
+		.excerpt {
+			font-size: 20px;
+			line-height: 32px;
+		}
+
+		&:after {
+			margin: 0 auto;
+		}
+	}
+
+	@media (max-width: 560px) {
+		h1, h2 {
+			font-size: 32px;
+			line-height: 38px;
+		}
+
+		.meta .category {
+			font-size: 10px;
+			margin: 0 auto;
+			float: none;
+		}
+
+		.excerpt {
+			font-size: 18px;
+			line-height: 28px;
+		}
+	}
+}
+
+.posttitle.single {
+	margin-top: 90px;
+	padding-bottom: 0;
+
+	.title a {
+		color: #292929;
+		margin-bottom: 35px;
+	}
+
+	.excerpt {
+		color: #b5b5b5;
+	}
+
+	&:after {
+		background: #f1f1f1;
+	}
+}
+
+body.single .posttitle, body.page .posttitle {
+	@media (max-width: 880px) {
+		text-align: center;
+
+		h1, .excerpt {
+			text-align: center;
+		}
+
+		.meta .category {
+			margin: 0 auto;
+		}
+	}
+}
+
+.cover.front .posttitle {
+	.meta .date, .meta .readtime {
+		display: block;
+
+		&:hover, a:hover {
+			color: #fff;
+		}
+	}
+
+	.author {
+		display: inline-block;
+
+		&:hover, a:hover {
+			color: #fff;
+		}
+	}
+
+	.excerpt {
+		font-size: 22px;
+		line-height: 36px;
+	}
+
+	&:after {
+		height: 0px;
+	}
+
+	@media (max-width: 880px) {
+		.meta .date, .meta .readtime, .author {
+			display: none;
+		}
+	}
+
+	@media (max-width: 560px) {
+		vertical-align: middle;
+	}
+}

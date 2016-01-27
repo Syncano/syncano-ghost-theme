@@ -1,0 +1,23 @@
+{{! 
+	
+	POST TEMPLATE
+	- Configuration of this file is not required.  
+
+}}
+{{!< default}}
+
+	{{#post}}
+
+		{{> cover_post}}
+
+		<section class="postcontents wrapper">
+			{{content}}
+		</section>
+
+		{{> post_footer}}
+		
+		{{> author_profile}}
+
+		{{> comments}}
+
+	{{/post}}

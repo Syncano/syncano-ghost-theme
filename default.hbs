@@ -1,0 +1,48 @@
+{{! CONFIGURATION OF THIS PAGE IS NOT REQUIRED }}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}" />
+
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="alternate" type="application/rss+xml" href="{{@blog.url}}/rss/">
+	<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+	<link rel="prefetch" href="{{@blog.url}}">
+
+	<link rel="stylesheet" type="text/css" href="{{asset "css/theme.min.css"}}" />
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Montserrat|Varela+Round|Oxygen" rel="stylesheet" type="text/css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+	{{ghost_head}}
+</head>
+<body class="{{body_class}} {{^if @blog.cover}}no-header{{/if}}">
+
+	{{> header}}
+
+	{{> drawer}}
+
+	<main class="pagewrapper">
+
+		{{{body}}}
+
+		{{> footer}}
+
+	</main>
+
+	{{#if post}}
+		{{> footer_post}}
+	{{/if}}
+	
+	{{! JAVASCRIPT }}
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script async type="text/javascript" src="{{asset "js/theme.min.js"}}"></script>
+
+	{{ghost_foot}}
+</body>
+</html>

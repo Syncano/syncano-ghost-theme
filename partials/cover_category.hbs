@@ -1,0 +1,26 @@
+{{! 
+	
+	COVER - CATEGORY
+	- Configuration of this file is not required. 
+
+}}
+
+	<section class="cover front category" data-height="65">
+		{{> bloginfo}}
+		{{#tag}}
+			{{#if image}}
+				<div class="background" style="background-image:url('{{image}}');"></div>
+			{{else}}
+				<div class="background" style="background-image:url('{{@blog.image}}');"></div>
+			{{/if}}
+			<section class="categorytitle wrapper">
+				<h1 class="name">{{name}}</h1>
+				{{#if description}}
+					<p>{{description}}</p>
+				{{/if}}
+			</section>
+		{{/tag}}
+		<div class="mouse">
+			<div class="scroll"></div>
+		</div>
+	</section>
