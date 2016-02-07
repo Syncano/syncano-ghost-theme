@@ -15,3 +15,14 @@
 		</section>
 
 	{{/post}}
+
+    <script type="text/javascript">
+        analytics.page('Website', {
+            Page: '',
+            postId: '{{id}}',
+            postClass: '{{post_class}}',
+            datePublished: '{{date format="YYYY-MM-DD"}}',
+            postAuthor: '{{author.name}}',
+            tags: '{{tags}}'
+        });
+    </script>

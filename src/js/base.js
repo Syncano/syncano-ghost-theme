@@ -208,7 +208,7 @@ jQuery(document).ready(function() {
 
 	// WIDGET - SUBSCRIPTION
 	function configureSubscription(){
-		jQuery('input.email').attr('placeholder', 'Email Address...');
+		jQuery('input.email').attr('placeholder', 'Email');
 	}
 
 

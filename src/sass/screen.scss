@@ -7,6 +7,7 @@ Last change:	10/01/16
 @import "normalize";
 @import "bourbon/bourbon";
 @import "vars";
+@import "custom-vars";
 
 @import "global";
 @import "fontawesome";
@@ -37,3 +38,5 @@ Last change:	10/01/16
 @import "authortitle";
 @import "altpageheader";
 @import "shortcodes";
+@import "cta";
+@import "custom";

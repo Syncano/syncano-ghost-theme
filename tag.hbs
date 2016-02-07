@@ -9,3 +9,11 @@
 	{{> cover_category}}
 
 	{{> postlist}}
+
+    <script type="text/javascript">
+        analytics.page('Website', {
+            Page: 'Tags',
+            tagName: '{{tag.name}}',
+            tagSlug: '{{tag.slug}}'
+        })
+    </script>

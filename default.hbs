@@ -12,14 +12,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<link rel="alternate" type="application/rss+xml" href="{{@blog.url}}/rss/">
-	<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+	<link rel="icon" type="image/png"  href="{{asset "favicon.png"}}">
 	<link rel="prefetch" href="{{@blog.url}}">
 
+    <link rel="stylesheet" type="text/css" href="{{asset "css/avenir/avenir.css"}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset "css/theme.min.css"}}" />
-	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Montserrat|Varela+Round|Oxygen" rel="stylesheet" type="text/css">
+
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 
 	{{ghost_head}}
+    <script type="text/javascript">
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+            analytics.load("huLqAgfVwOWUuWKdMtkK8kyfLhAtLYF1");
+        }}();
+    </script>
 </head>
 <body class="{{body_class}} {{^if @blog.cover}}no-header{{/if}}">
 
@@ -35,13 +41,30 @@
 
 	</main>
 
-	{{#if post}}
-		{{> footer_post}}
-	{{/if}}
-	
+	{{!#if post}}
+		{{!> footer_post}}
+	{{!/if}}
+
 	{{! JAVASCRIPT }}
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script async type="text/javascript" src="{{asset "js/theme.min.js"}}"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('#mc-embedded-subscribe-form').submit(function(event) {
+                event.preventDefault();
+
+                var subscribeEmail = $('#mce-EMAIL').val();
+
+                analytics.alias(subscribeEmail);
+                analytics.identify(subscribeEmail, {
+                    email: subscribeEmail,
+                    source: 'Newsletter'
+                });
+                analytics.track('Subscribed to newsletter', {email: subscribeEmail});
+            });
+        });
+    </script>
 
 	{{ghost_foot}}
 </body>

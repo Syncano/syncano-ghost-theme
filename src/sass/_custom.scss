@@ -1,0 +1,276 @@
+.cover {
+    background: #1C2228;
+    height: 660px;
+
+    .background {
+        opacity: 1;
+    }
+}
+
+.cover.front,
+.cover.author,
+.cover.category,
+.cover.search,
+.cover.archive,
+body.paged .cover {
+    height: 550px;
+}
+
+header.bloginfo {
+    height: 76px;
+    padding: 19px 25px;
+
+    &.transparent {
+        padding: 19px 25px;
+    }
+
+    .title {
+        a {
+            display: block;
+            padding: 10px 0;
+            height: 38px;
+
+            img {
+                display: block;
+                width: 100%;
+                max-height: 18px;
+            }
+        }
+    }
+}
+
+nav.main ul li ul {
+    width: 125px;
+}
+
+.blogtitle, .errortitle .description {
+    color: rgba(255,255,255,0.8);
+}
+
+.blogtitle .description {
+    display: block;
+}
+
+.posttitle {
+    h1,
+    h2 {
+        word-break: break-word;
+    }
+
+
+    :after,
+    &.single:after {
+        display: none;
+    }
+}
+
+
+.widget.blog_info img {
+    max-height: 18px;
+}
+
+.postitem {
+    h1,
+    h2 {
+        a {
+            word-break: break-word;
+        }
+    }
+
+    .meta {
+        .category,
+        .date,
+        .readtime,
+        .issticky {
+            a {
+                font-size: 16px;
+                letter-spacing: 0;
+            }
+        }
+        .category a {
+            background: none;
+            padding-left: 0;
+            color: #b5b5b5;
+            font-weight: 600;
+
+            &:hover {
+                color: #5C5C5C;
+            }
+        }
+
+        .date a {
+            font-weight: 600;
+        }
+    }
+
+    .author {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0;
+
+        img {
+            width: 40px;
+            height: 40px;
+            vertical-align: -14px;
+        }
+    }
+
+    .readmore {
+        float: right;
+        color: #b5b5b5;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 40px;
+
+        &:hover {
+            color: #5C5C5C;
+        }
+    }
+}
+
+.tags a, .tagcloud a {
+    background: none;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 12px;
+    font-weight: 800;
+    margin-right: 25px;
+    color: #b5b5b5;
+
+    &:before {
+        content: "#";
+    }
+
+    &:hover {
+        background: none;
+        color: #5C5C5C;
+    }
+
+    @media (max-width: 767px) {
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.postbottom .categories .category {
+    background: none;
+    padding-right: 0;
+    color: #b5b5b5;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 800;
+
+    &:hover {
+        background: none;
+        color: #5C5C5C;
+    }
+
+    @media (max-width: 767px) {
+        text-align: center;
+        padding-left: 0;
+    }
+}
+
+.comments {
+    margin-bottom: 0;
+}
+
+.commentitems {
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+body,
+body.post-template {
+    footer.main {
+        @include display(flex);
+        @include flex-direction(row);
+
+        .copyright {
+            width: 30%;
+
+            > p.main {
+                margin: 0;
+                line-height: 40px;
+                opacity: 0.5;
+                color: #b8c0c9;
+            }
+        }
+
+        .menu {
+            @include flex(1);
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+
+            > li {
+                display: inline-block;
+                vertical-align: top;
+
+                > a {
+                    color: #b8c0c9;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 40px;
+                    padding: 0 6px;
+                }
+            }
+        }
+
+        .social {
+            width: 30%;
+            text-align: right;
+
+            li {
+                border: 0;
+                float: none;
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 1366px) {
+            @include flex-direction(column);
+
+            .menu {
+                order: 1;
+
+                > li {
+                    display: block;
+                }
+            }
+
+            .social {
+                order: 2;
+                width: 100%;
+                text-align: center;
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .copyright {
+                order: 3;
+                width: 100%;
+                line-height: 20px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 18px
+    }
+}
