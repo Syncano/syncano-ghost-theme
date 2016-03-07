@@ -3,8 +3,12 @@
     height: 660px;
 
     .background {
-        opacity: 1;
+        opacity: 0.1;
     }
+}
+
+.home-template .cover .background {
+    opacity: 1;
 }
 
 .cover.front,
@@ -57,10 +61,13 @@ nav.main ul li ul {
         word-break: break-word;
     }
 
-
-    :after,
+    &:after,
     &.single:after {
         display: none;
+    }
+
+    .meta .date {
+        display: block;
     }
 }
 
@@ -74,6 +81,10 @@ nav.main ul li ul {
     h2 {
         a {
             word-break: break-word;
+
+            &:hover {
+                color: #0070D3;
+            }
         }
     }
 
@@ -85,6 +96,10 @@ nav.main ul li ul {
             a {
                 font-size: 16px;
                 letter-spacing: 0;
+
+                &:hover {
+                    color: #0070D3;
+                }
             }
         }
         .category a {
@@ -94,7 +109,7 @@ nav.main ul li ul {
             font-weight: 600;
 
             &:hover {
-                color: #5C5C5C;
+                color: #0070D3;
             }
         }
 
@@ -113,6 +128,10 @@ nav.main ul li ul {
             height: 40px;
             vertical-align: -14px;
         }
+
+        &:hover {
+            color: #0070D3;
+        }
     }
 
     .readmore {
@@ -123,8 +142,13 @@ nav.main ul li ul {
         line-height: 40px;
 
         &:hover {
-            color: #5C5C5C;
+            color: #0070D3;
         }
+    }
+
+    .excerpt {
+        display: block;
+        color: rgba(0,0,0,.8);
     }
 }
 
@@ -153,6 +177,32 @@ nav.main ul li ul {
     }
 }
 
+.postcontents {
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        color: #494a50;
+    }
+
+    a {
+        color: #0070D3;
+        border-bottom: 0;
+
+        &:hover {
+            color: #49b9e8;
+        }
+    }
+
+    p,
+    ul,
+    ol {
+        color: rgba(0,0,0,.8);
+    }
+}
+
+
 .postbottom .categories .category {
     background: none;
     padding-right: 0;
@@ -179,6 +229,10 @@ nav.main ul li ul {
 .commentitems {
     background: #f9f9f9;
     border-top: 1px solid #eee;
+}
+
+code {
+    word-break: break-all;
 }
 
 body,
@@ -215,6 +269,11 @@ body.post-template {
                     font-weight: 400;
                     line-height: 40px;
                     padding: 0 6px;
+                    transition: opacity 0.15s ease-in;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
                 }
             }
         }
