@@ -7,7 +7,7 @@ var config = {
 	'analytics_id': '',
 	// Enable Syntax Highlighting of Code
 	// Options: true / false
-	'highlightcode': true,
+	'highlightcode': false,
 	// Enable Auto-Loading Comments
 	// Options: true / false
 	'autoload_comments': true,
