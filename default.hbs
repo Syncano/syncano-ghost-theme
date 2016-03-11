@@ -54,15 +54,27 @@
         $(function() {
             $('#mc-embedded-subscribe-form').submit(function(event) {
                 event.preventDefault();
+                $('#mce-responses').children().hide();
+
+                function isEmail(email) {
+                    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                    return regex.test(email);
+                }
 
                 var subscribeEmail = $('#mce-EMAIL').val();
 
-                analytics.alias(subscribeEmail);
-                analytics.identify(subscribeEmail, {
-                    email: subscribeEmail,
-                    source: 'Newsletter'
-                });
-                analytics.track('Subscribed to newsletter', {email: subscribeEmail});
+                if (isEmail(subscribeEmail)) {
+                    $(this).parent().hide();
+                    $('#mce-success-response').text('Success! Check your inbox').show();
+                    analytics.alias(subscribeEmail);
+                    analytics.identify(subscribeEmail, {
+                        email: subscribeEmail,
+                        source: 'Newsletter'
+                    });
+                    analytics.track('Subscribed to newsletter', {email: subscribeEmail});
+                } else {
+                    $('#mce-error-response').text('Please provide a valid email.').show();
+                }
             });
         });
     </script>
