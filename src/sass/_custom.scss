@@ -80,6 +80,33 @@ nav.main ul li ul {
     max-height: 18px;
 }
 
+.widget.subscribe {
+    #mc_embed_signup {
+        position: relative;
+    }
+
+    #mce-responses {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    #mce-success-response {
+        margin-top: 28px;
+        color: #19ba1c;
+    }
+
+    #mce-error-response {
+        margin-top: 10px;
+        color: #c30910;
+    }
+
+    i {
+        bottom: 18px;
+    }
+}
+
+
 .postitem {
     h1,
     h2 {
