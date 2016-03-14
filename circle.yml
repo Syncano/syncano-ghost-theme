@@ -4,15 +4,19 @@ machine:
 
 dependencies:
   pre:
-    - git clone -b INFRA-227 git@github.com:Syncano/syncano-ansible.git
+    - git clone -b devel git@github.com:Syncano/syncano-ansible.git
     - cp syncano-ansible/config/ssh_config ~/.ssh/config
   override:
     - pip install -r syncano-ansible/requirements.txt
 
+test:
+  override:
+    - echo "Dummy test"
+
 deployment:
   staging:
     branch:
-      - INFRA-227
+      - devel
     commands:
       - cd syncano-ansible/playbooks && ansible-playbook www-server.yml -e "env=stg" --tags=theme
   production:
