@@ -1,0 +1,22 @@
+machine:
+  python:
+    version: 2.7.9
+
+dependencies:
+  pre:
+    - git clone -b INFRA-227 git@github.com:Syncano/syncano-ansible.git
+    - cp syncano-ansible/config/ssh_config ~/.ssh/config
+  override:
+    - pip install -r syncano-ansible/requirements.txt
+
+deployment:
+  staging:
+    branch:
+      - INFRA-227
+    commands:
+      - cd syncano-ansible/playbooks && ansible-playbook www-server.yml -e "env=stg" --tags=theme
+  production:
+    branch:
+      - master
+    commands:
+      - cd syncano-ansible/playbooks && ansible-playbook www-server.yml -e "env=prd" --tags=theme
