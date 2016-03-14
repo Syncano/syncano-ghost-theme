@@ -1,0 +1,26 @@
+machine:
+  python:
+    version: 2.7.9
+
+dependencies:
+  pre:
+    - git clone -b devel git@github.com:Syncano/syncano-ansible.git
+    - cp syncano-ansible/config/ssh_config ~/.ssh/config
+  override:
+    - pip install -r syncano-ansible/requirements.txt
+
+test:
+  override:
+    - echo "Dummy test"
+
+deployment:
+  staging:
+    branch:
+      - devel
+    commands:
+      - cd syncano-ansible/playbooks && ansible-playbook www-server.yml -e "env=stg" --tags=theme
+  production:
+    branch:
+      - master
+    commands:
+      - cd syncano-ansible/playbooks && ansible-playbook www-server.yml -e "env=prd" --tags=theme
