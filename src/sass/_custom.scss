@@ -176,8 +176,16 @@ nav.main ul li ul {
             }
         }
 
-        .date a {
-            font-weight: 600;
+        .date {
+            a {
+                font-weight: 600;
+            }
+
+            @media (max-width: 560px) {
+                &:before {
+                    display: none;
+                }
+            }
         }
 
         @media (max-width: 560px) {
@@ -216,6 +224,12 @@ nav.main ul li ul {
 
         &:hover {
             color: #0070D3;
+        }
+
+        @media (max-width: 560px) {
+            display: block;
+            float: none;
+            margin-bottom: 30px;
         }
     }
 
