@@ -1,6 +1,13 @@
 .cover {
     background: #1C2228;
-    height: 660px;
+
+    @media (min-width: 851px) {
+        height: 660px;
+    }
+
+    @media (max-width: 560px) {
+        min-height: 100vh;
+    }
 
     .background {
         opacity: 0.1;
@@ -64,6 +71,19 @@ nav.main ul li ul {
 }
 
 .posttitle {
+    &.center {
+        @media (max-width: 880px) {
+            vertical-align: middle;
+        }
+    }
+
+    h1 {
+        @media (min-width: 561px) {
+            font-size: 52px;
+            line-height: 64px;
+        }
+    }
+
     h1,
     h2 {
         word-break: break-word;
@@ -74,8 +94,16 @@ nav.main ul li ul {
         display: none;
     }
 
-    .meta .date {
-        display: block;
+    .meta {
+        .date {
+            display: block;
+        }
+
+        .category {
+            @media (max-width: 880px) {
+                float: left;
+            }
+        }
     }
 }
 
@@ -151,6 +179,16 @@ nav.main ul li ul {
         .date a {
             font-weight: 600;
         }
+
+        @media (max-width: 560px) {
+            > li {
+                float: none !important;
+            }
+
+            > li.category > a {
+                padding: 0;
+            }
+        }
     }
 
     .author {
@@ -182,8 +220,15 @@ nav.main ul li ul {
     }
 
     .excerpt {
+        font-size: 19px;
+        line-height: 1.6;
         display: block;
         color: rgba(0,0,0,.8);
+
+        @media (min-width: 561px) {
+            font-size: 21px;
+            line-height: 33px;
+        }
     }
 }
 
@@ -215,10 +260,16 @@ nav.main ul li ul {
 .postcontents {
     h2 {
         font-size: 36px;
-    }
+        line-height: 46px;
+        > code {
+            font-size: 1em;
+            line-height: 1em;
+        }
 
-    h3 {
-        color: #494a50;
+        @media (max-width: 560px) {
+            font-size: 28px;
+            line-height: 38px;
+        }
     }
 
     a {
@@ -230,10 +281,43 @@ nav.main ul li ul {
         }
     }
 
+    p {
+        font-size: 19px;
+        line-height: 1.6;
+
+        @media (min-width: 561px) {
+            font-size: 21px;
+            line-height: 33px;
+        }
+    }
+
     p,
     ul,
     ol {
         color: rgba(0,0,0,.8);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #494a50;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    li {
+        code {
+            font-size: 1em;
+        }
     }
 }
 
@@ -268,6 +352,10 @@ nav.main ul li ul {
 
 code {
     word-break: break-all;
+}
+
+.pagewrapper .widget.authorprofile .meta .title {
+    color: #62646c;
 }
 
 body,
