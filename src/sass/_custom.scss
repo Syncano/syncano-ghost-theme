@@ -181,9 +181,13 @@ nav.main ul li ul {
                 font-weight: 600;
             }
 
-            @media (max-width: 560px) {
+            @media (max-width: 881px) {
                 &:before {
                     display: none;
+                }
+
+                a {
+                    padding: 0;
                 }
             }
         }
