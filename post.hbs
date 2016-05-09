@@ -24,6 +24,9 @@
             analytics.page('Website', {
                 Page: '{{title}}'
             });
+            // Update MixPanel and Intercom with Post Title and Category
+	    analytics.track("Read Blog Post", {title: '{{title}}', category: '{{tags.0.name}}'});
+	    analytics.identify({lastBlogPost: {title: '{{title}}', category: '{{tags.0.name}}'}});
         </script>
 	{{/post}}
 
