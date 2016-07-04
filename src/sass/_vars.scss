@@ -130,10 +130,10 @@ $font_body: "Noto Serif", "Times New Roman", Serif;
 	}
 }
 
+$spec: ();
+
 @mixin transition($properties...) {
 	@if length($properties) > 1 {
-		$spec: ();
-
 		@for $i from 1 through length($properties) {
 			$spec: append($spec, nth($properties, $i), comma);
 		}
