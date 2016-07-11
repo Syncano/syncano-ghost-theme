@@ -110,6 +110,7 @@
 	letter-spacing: -0.5px;
 	line-height: normal;
 	text-transform: uppercase;
+	display: none;
 
 	ul {
 		margin: 0;
@@ -176,6 +177,10 @@
 
 	&:after {
 		margin-top: 20px;
+	}
+
+	@media (max-width: 880px) {
+		display: block;
 	}
 }
 
