@@ -23,10 +23,6 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 
 	{{ghost_head}}
-	<script type="text/javascript">
-		analytics.track("Read Blog Post", {title: '{{title}}', category: '{{tags.0.name}}'});
-		analytics.identify({lastBlogPost: {title: '{{title}}', category: '{{tags.0.name}}'}});
-	</script>
 </head>
 <body class="{{body_class}} {{^if @blog.cover}}no-header{{/if}}">
 
