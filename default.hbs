@@ -10,24 +10,23 @@
 
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1c2228" />
+	<meta name="theme-color" content="#1c2228" />
 
 	<link rel="alternate" type="application/rss+xml" href="{{@blog.url}}/rss/">
 	<link rel="icon" type="image/png"  href="{{asset "favicon.png"}}">
 	<link rel="prefetch" href="{{@blog.url}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset "css/avenir/avenir.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset "css/avenir/avenir.css"}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset "css/theme.min.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
 
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 
 	{{ghost_head}}
-    <script type="text/javascript">
-        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
-            analytics.load("CCupheBjgV6WI0emy3oRUnDyjQ8ngmgB");
-        }}();
-    </script>
+	<script type="text/javascript">
+		analytics.track("Read Blog Post", {title: '{{title}}', category: '{{tags.0.name}}'});
+		analytics.identify({lastBlogPost: {title: '{{title}}', category: '{{tags.0.name}}'}});
+	</script>
 </head>
 <body class="{{body_class}} {{^if @blog.cover}}no-header{{/if}}">
 
@@ -50,35 +49,35 @@
 	{{! JAVASCRIPT }}
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script async type="text/javascript" src="{{asset "js/theme.min.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-    <script type="text/javascript">
-        $(function() {
-            $('#mc-embedded-subscribe-form').submit(function(event) {
-                event.preventDefault();
-                $('#mce-responses').children().hide();
+	<script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#mc-embedded-subscribe-form').submit(function(event) {
+				event.preventDefault();
+				$('#mce-responses').children().hide();
 
-                function isEmail(email) {
-                    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-                    return regex.test(email);
-                }
+				function isEmail(email) {
+					var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+					return regex.test(email);
+				}
 
-                var subscribeEmail = $('#mce-EMAIL').val();
+				var subscribeEmail = $('#mce-EMAIL').val();
 
-                if (isEmail(subscribeEmail)) {
-                    $(this).parent().hide();
-                    $('#mce-success-response').text('Success! Check your inbox').show();
-                    analytics.alias(subscribeEmail);
-                    analytics.identify(subscribeEmail, {
-                        email: subscribeEmail,
-                        source: 'Newsletter'
-                    });
-                    analytics.track('Subscribed to newsletter', {email: subscribeEmail});
-                } else {
-                    $('#mce-error-response').text('Please provide a valid email.').show();
-                }
-            });
-        });
-    </script>
+				if (isEmail(subscribeEmail)) {
+					$(this).parent().hide();
+					$('#mce-success-response').text('Success! Check your inbox').show();
+					analytics.alias(subscribeEmail);
+					analytics.identify(subscribeEmail, {
+						email: subscribeEmail,
+						source: 'Newsletter'
+					});
+					analytics.track('Subscribed to newsletter', {email: subscribeEmail});
+				} else {
+					$('#mce-error-response').text('Please provide a valid email.').show();
+				}
+			});
+		});
+	</script>
 
 	{{ghost_foot}}
 </body>
