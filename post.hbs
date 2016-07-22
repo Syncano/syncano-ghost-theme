@@ -26,6 +26,8 @@
 			analytics.page('Website', {
 				Page: '{{title}}'
 			});
+			analytics.track("Read Blog Post", {title: '{{title}}', category: '{{tags.0.name}}'});
+			analytics.identify({lastBlogPost: {title: '{{title}}', category: '{{tags.0.name}}'}});
 		</script>
 	{{/post}}
 
