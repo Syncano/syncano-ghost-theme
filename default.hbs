@@ -8,6 +8,9 @@
 	<title>{{meta_title}}</title>
 	<meta name="description" content="{{meta_description}}" />
 
+	{{#if author}}<meta name="robots" content="noindex, follow">{{/if}}
+	{{#if tag}}<meta name="robots" content="noindex, follow">{{/if}}
+
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="theme-color" content="#1c2228" />
