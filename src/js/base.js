@@ -138,27 +138,28 @@ jQuery(document).ready(function() {
 	// FLOATING HEADER
 	function configureHeader(){
 		if(jQuery('.cover').length > 0){
-			jQuery('.headroom').css('display', 'none');
+			// jQuery('.headroom').css('display', 'none');
 			jQuery('footer.postinfo').css('display', 'none');
-			jQuery('.cover').waypoint(function(direction) {
-				if(direction == "down") jQuery('.headroom').css('display', 'block');
-				if(direction == "up") jQuery('.headroom').fadeOut(200);
-			}, { offset: -Math.abs(jQuery('.cover').height()) });
+			// jQuery('.cover').waypoint(function(direction) {
+			// 	if(direction == "down") jQuery('.headroom').css('display', 'block');
+			// 	if(direction == "up") jQuery('.headroom').fadeOut(200);
+			// }, { offset: -Math.abs(jQuery('.cover').height()) });
 			jQuery('.cover').waypoint(function(direction) {
 				if(direction == "down") jQuery('footer.postinfo').css('display', 'block');
 				if(direction == "up") jQuery('footer.postinfo').fadeOut(200);
 			}, { offset: -75 });
 		}else{
-			jQuery('.headroom').css('display', 'block');
+			// jQuery('.headroom').css('display', 'block');
 		}
 
 		if(jQuery(".headroom").length > 0){
+      // Headroom.options['offset'] = 50;
 			Headroom.options['offset'] = 50;
-			Headroom.options['tolerance']['up'] = 20;
-			Headroom.options['tolerance']['down'] = 10;
-			Headroom.options['onUnpin'] = function(){
-				jQuery('.sub-menu').slideUp();
-			};
+			// Headroom.options['tolerance']['up'] = 20;
+			// Headroom.options['tolerance']['down'] = 10;
+			// Headroom.options['onUnpin'] = function(){
+			// 	jQuery('.sub-menu').slideUp();
+			// };
 			var header = document.querySelector(".headroom");
 			var headroom  = new Headroom(header);
 			headroom.init();
@@ -169,7 +170,7 @@ jQuery(document).ready(function() {
 	// DRAWER
 	function openDrawer(){
 		jQuery('.drawer').addClass('show');
-		jQuery('.pagewrapper').addClass('slide');	
+		jQuery('.pagewrapper').addClass('slide');
 		jQuery('.bloginfo').addClass('slide');
 		jQuery('.searchoverlay').addClass('slide');
 		jQuery('footer.postinfo').addClass('slide');
@@ -220,7 +221,7 @@ jQuery(document).ready(function() {
 	jQuery('.widget.navigation > ul > li.menu-item-has-children > a, nav.main li.menu-item-has-children > a').each(function(){
 		jQuery(this).html(jQuery(this).text() + '<i class="fa fa-chevron-down"></i>');
 	});
-	
+
 	jQuery('.drawer li.menu-item-has-children > a').on("click", function(){
 		var parent = jQuery(this).parent();
 		jQuery('a i', parent).toggleClass('fa-chevron-down');
@@ -305,10 +306,10 @@ jQuery(document).ready(function() {
 	function fixIOSViewPort(){
 		if(navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i)){
 			var height = Math.floor(jQuery(window).height() * (jQuery('.cover').attr('data-height') / 100));
-			jQuery('.cover').css('height', height);	
+			jQuery('.cover').css('height', height);
 		}
 	}
-	
+
 	if(navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i)){
 		fixIOSViewPort();
 		jQuery(window).resize(function() { fixIOSViewPort(); });
