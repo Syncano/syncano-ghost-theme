@@ -9,13 +9,6 @@ Last change:	10/01/16
 @import "vars";
 @import "custom-vars";
 
-@import "includes/functions";
-@import "includes/colors";
-@import "includes/breakpoints";
-@import "includes/mixins";
-@import "includes/transitions";
-@import "includes/z-indexes";
-
 @import "global";
 @import "fontawesome";
 @import "wordpress";
@@ -47,6 +40,15 @@ Last change:	10/01/16
 @import "shortcodes";
 @import "cta";
 @import "custom";
+
+// syncano.com
+@import "includes/functions";
+@import "includes/colors";
+@import "includes/breakpoints";
+@import "includes/mixins";
+@import "includes/transitions";
+@import "includes/z-indexes";
 @import "button";
 @import "top-bar";
 @import "inner";
+@import "hamburger-menu";

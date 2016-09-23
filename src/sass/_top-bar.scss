@@ -9,8 +9,8 @@
   width: 100%;
   @include z-index(top-bar);
   transition: $transition-default;
-  background: #fff;
   transform: translateZ(0);
+  background: #fff;
 
   // Chrome for iOS (iPhone) .top-bar chink fix
   &:before {
@@ -24,7 +24,7 @@
     background: #fff;
   }
 
-  > .inner {
+  .inner.top-bar__inner {
     overflow: hidden;
     padding-top: 22px;
     padding-bottom: 22px;
@@ -160,7 +160,7 @@
       display: none;
     }
 
-    > .inner {
+    .inner.top-bar__inner {
       padding-top: 40px;
       padding-bottom: 40px;
     }
@@ -189,7 +189,7 @@
     &.headroom--unpinned {
       transform: translateY(-46px);
 
-      > .inner {
+      .inner.top-bar__inner {
         transform: translateY(23px);
       }
     }
@@ -200,12 +200,101 @@
       margin-right: 35px;
     }
   }
+}
 
-  // overrides
+// Syncano Serverless Blog adjustments
+.top-bar {
   font-family: 'Roboto', sans-serif;
+  overflow: visible;
+  font-size: 0;
+  line-height: 1;
 
   ul {
     margin: 0;
+    padding: 0;
+  }
+
+  .top-bar__nav__hamburger img {
+    border-radius: 0;
+  }
+
+  .top-bar__submenu {
+    display: none;
+  }
+
+  &.headroom--pinned:not(.headroom--top),
+  &.headroom--unpinned {
+    transform: translateY(0);
+
+    .inner.top-bar__inner {
+      transform: translateY(0);
+      background: #fff;
+
+      @include body-class('has-hamburger-menu-visible') {
+        background: none;
+      }
+    }
+  }
+
+  @include medium {
+    .inner.top-bar__inner {
+      padding-top: 17px;
+      padding-bottom: 17px;
+    }
+
+    .top-bar__submenu {
+      display: block;
+      background: rgba(255, 255, 255, .1);
+      transition: $transition-default;
+      transform: translateZ(0);
+      position: absolute;
+      top: 100%;
+      width: 100%;
+
+      .inner {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .top-bar__submenu__title {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        color: #fff;
+      }
+
+      .top-bar__submenu__categories ul {
+        list-style: none;
+        display: flex;
+
+        li {
+          margin-right: 30px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          .button {
+            color: rgba(255, 255, 255, .5);
+            padding: 0;
+            display: inline-block;
+            min-width: 0;
+
+            &:hover {
+              color: rgba(255, 255, 255, 1);
+            }
+          }
+        }
+      }
+    }
+
+    &.headroom--pinned:not(.headroom--top) .top-bar__submenu,
+    &.headroom--unpinned .top-bar__submenu {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
   }
 }
 
