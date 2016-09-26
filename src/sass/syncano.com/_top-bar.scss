@@ -9,8 +9,8 @@
   width: 100%;
   @include z-index(top-bar);
   transition: $transition-default;
-  transform: translateZ(0);
   background: #fff;
+  transform: translateZ(0);
 
   // Chrome for iOS (iPhone) .top-bar chink fix
   &:before {
@@ -86,6 +86,11 @@
           margin-right: 0;
         }
 
+        &.top-bar__nav__menu__item--customers,
+        &.top-bar__nav__menu__item--docs {
+          display: none;
+        }
+
         .button {
           min-width: 0;
           height: 34px;
@@ -113,7 +118,8 @@
   }
 
   &.headroom--pinned:not(.headroom--top),
-  &.headroom--unpinned {
+  &.headroom--unpinned,
+  &.headroom--not-top {
     box-shadow: 0 3px 4px rgba(0, 0, 0, .1);
 
     .top-bar__nav__menu__cta {
@@ -198,8 +204,17 @@
   @include large {
     .top-bar__nav .top-bar__nav__menu li {
       margin-right: 35px;
+
+      &.top-bar__nav__menu__item--customers,
+      &.top-bar__nav__menu__item--docs {
+        display: inline-block;
+      }
     }
   }
+}
+
+.headroom {
+  @extend .top-bar;
 }
 
 // Syncano Serverless Blog adjustments
@@ -244,7 +259,7 @@
 
     .top-bar__submenu {
       display: block;
-      background: rgba(255, 255, 255, .1);
+      background: #32393e;
       transition: $transition-default;
       transform: translateZ(0);
       position: absolute;
@@ -296,8 +311,4 @@
       opacity: 0;
     }
   }
-}
-
-.headroom {
-  @extend .top-bar;
 }
