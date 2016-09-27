@@ -275,6 +275,7 @@
 
       .inner {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         padding-top: 15px;
         padding-bottom: 15px;
@@ -283,6 +284,7 @@
       .top-bar__submenu__title {
         display: flex;
         align-items: center;
+        font-size: 17px;
         font-weight: 400;
         color: #fff;
       }
