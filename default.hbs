@@ -1,10 +1,8 @@
-{{! CONFIGURATION OF THIS PAGE IS NOT REQUIRED }}
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
 	<title>{{meta_title}}</title>
 	<meta name="description" content="{{meta_description}}" />
 
@@ -30,15 +28,11 @@
 <body class="{{body_class}} {{^if @blog.cover}}no-header{{/if}}">
 
 	{{> header}}
-
-	{{> drawer}}
+	{{!> drawer}}
 
 	<main class="pagewrapper">
-
 		{{{body}}}
-
 		{{> footer}}
-
 	</main>
 
 	{{!#if post}}

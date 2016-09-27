@@ -40,3 +40,17 @@ Last change:	10/01/16
 @import "shortcodes";
 @import "cta";
 @import "custom";
+
+// syncano.com includes
+@import "syncano.com/functions";
+@import "syncano.com/colors";
+@import "syncano.com/breakpoints";
+@import "syncano.com/mixins";
+@import "syncano.com/transitions";
+@import "syncano.com/z-indexes";
+
+// syncano.com components
+@import "syncano.com/button";
+@import "syncano.com/hamburger-menu";
+@import "syncano.com/inner";
+@import "syncano.com/top-bar";
