@@ -24,7 +24,7 @@
     background: #fff;
   }
 
-  .inner.top-bar__inner {
+  .top-bar__inner {
     overflow: hidden;
     padding-top: 22px;
     padding-bottom: 22px;
@@ -166,7 +166,7 @@
       display: none;
     }
 
-    .inner.top-bar__inner {
+    .top-bar__inner {
       padding-top: 40px;
       padding-bottom: 40px;
     }
@@ -195,7 +195,7 @@
     &.headroom--unpinned {
       transform: translateY(-46px);
 
-      .inner.top-bar__inner {
+      .top-bar__inner {
         transform: translateY(23px);
       }
     }
@@ -241,7 +241,7 @@
   &.headroom--unpinned {
     transform: translateY(0);
 
-    .inner.top-bar__inner {
+    .top-bar__inner {
       transform: translateY(0);
       background: #fff;
 
@@ -252,7 +252,13 @@
   }
 
   @include medium {
-    .inner.top-bar__inner {
+    .top-bar__main {
+      background: #fff;
+      position: relative;
+      @include z-index(top-bar__main);
+    }
+
+    .top-bar__inner {
       padding-top: 17px;
       padding-bottom: 17px;
     }
@@ -260,9 +266,10 @@
     .top-bar__submenu {
       display: block;
       background: #32393e;
-      transition: $transition-default;
+      transition: all .5s;
       transform: translateZ(0);
       position: absolute;
+      @include z-index(top-bar__submenu);
       top: 100%;
       width: 100%;
 
@@ -308,7 +315,7 @@
     &.headroom--pinned:not(.headroom--top) .top-bar__submenu,
     &.headroom--unpinned .top-bar__submenu {
       transform: translateY(-100%);
-      opacity: 0;
+      opacity: .5;
     }
   }
 }
