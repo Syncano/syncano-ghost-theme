@@ -287,6 +287,10 @@
         font-size: 17px;
         font-weight: 400;
         color: #fff;
+
+        a {
+          color: inherit;
+        }
       }
 
       .top-bar__submenu__categories ul {
