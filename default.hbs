@@ -1,12 +1,13 @@
-{{! CONFIGURATION OF THIS PAGE IS NOT REQUIRED }}
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
 	<title>{{meta_title}}</title>
 	<meta name="description" content="{{meta_description}}" />
+
+	{{#if author}}<meta name="robots" content="noindex, follow">{{/if}}
+	{{#if tag}}<meta name="robots" content="noindex, follow">{{/if}}
 
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,15 +28,11 @@
 <body class="{{body_class}} {{^if @blog.cover}}no-header{{/if}}">
 
 	{{> header}}
-
-	{{> drawer}}
+	{{!> drawer}}
 
 	<main class="pagewrapper">
-
 		{{{body}}}
-
 		{{> footer}}
-
 	</main>
 
 	{{!#if post}}

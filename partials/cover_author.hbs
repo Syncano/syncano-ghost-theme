@@ -1,20 +1,19 @@
-{{! 
-	
+{{!
+
 	COVER - AUTHOR
-	- Configuration of this file is not required. 
+	- Configuration of this file is not required.
 
 }}
 
 	<section class="cover author" data-height="65">
 		<div class="background" style="background-image:url('{{@blog.image}}');"></div>
-		{{> bloginfo}}
 		{{#author}}
 		<section class="authortitle wrapper">
 			<div class="info">
 				<img src="{{image}}" class="profile gravatar" alt="{{name}}">
 				<div class="meta">
 					<span class="title">Author</span>
-					<h3>{{name}}</h3>						
+					<h3>{{name}}</h3>
 				</div>
 			</div>
 			<p>{{bio}}</p>
