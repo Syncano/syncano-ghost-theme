@@ -283,7 +283,7 @@ jQuery(document).ready(function() {
 						var offset = jQuery(this).offset().top;
 						var height = jQuery(this).outerHeight();
 						offset = offset + height / 1;
-						jQuery('.cover .background').css({ 'opacity': 0.2 + (st - offset + range) / (range / 2) });
+						jQuery('.cover .background').css({ 'opacity': 0.3 + (st - offset + range) / (range / 2) });
 						jQuery('.cover .posttitle').css({ 'opacity': 1.0 - (st - offset + range) / (range / 1.5) });
 					});
 				});
