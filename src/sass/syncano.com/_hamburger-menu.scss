@@ -39,7 +39,7 @@
 
       &.open {
         .hamburger-menu__collapsable__icon {
-          transform: rotate(90deg);
+          transform: rotate(-180deg);
         }
 
         .hamburger-menu__submenu {
@@ -56,8 +56,9 @@
         display: none;
 
         .hamburger-menu__submenu__item {
-          font-weight: 300;
+          font-weight: 400;
           line-height: 50px;
+          text-transform: capitalize;
         }
       }
     }
