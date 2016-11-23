@@ -61,7 +61,19 @@
           <li><a href="/customers/">Customers</a></li>
           <li><a href="http://docs.syncano.io/" target="_blank">Docs</a></li>
           <li><a href="/help/">Help</a></li>
-          <li><a href="{{@blog.url}}">Blog</a></li>
+          <li class="hamburger-menu__collapsable">
+            <span class="hamburger-menu__collapsable__title">
+              Blog
+              <i class="hamburger-menu__collapsable__icon fa fa-chevron-right"></i>
+            </span>
+            <ul class="hamburger-menu__submenu">
+              <li class="hamburger-menu__submenu__item"><a href="/blog/tag/tutorials/">Tutorials</a></li>
+              <li class="hamburger-menu__submenu__item"><a href="/blog/tag/updates/">Updates</a></li>
+              <li class="hamburger-menu__submenu__item"><a href="/blog/tag/engineering/">Engineering</a></li>
+              <li class="hamburger-menu__submenu__item"><a href="/blog/tag/events/">Events</a></li>
+              <li class="hamburger-menu__submenu__item"><a href="/blog/tag/customers/">Customers</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
       <div class="hamburger-menu__buttons">
