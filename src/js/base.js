@@ -363,4 +363,15 @@ jQuery(document).ready(function() {
 			}
 		});
 	});
+
+	// COLLAPSE DISQUS COMMENTS
+	var disqusThread = jQuery('#disqus_thread');
+	var toggleLink = jQuery('#comments-button');
+
+	disqusThread.toggle();
+	toggleLink.click(function(){
+		DISQUS.reset({reload: true});
+		disqusThread.toggle();
+		toggleLink.css({ 'display': 'none' })
+	});
 });
