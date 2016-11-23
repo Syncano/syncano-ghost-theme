@@ -43,6 +43,11 @@
 .commentitems {
 	background: #222326;
 	padding: 90px 0 140px;
+	text-align: center;
+
+	#disqus_thread {
+		display: none;
+	}
 
 	.notification {
 		font-family: $font_sub_header;
