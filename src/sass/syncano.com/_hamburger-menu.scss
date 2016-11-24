@@ -39,7 +39,7 @@
 
       &.open {
         .hamburger-menu__collapsable__icon {
-          transform: rotate(-180deg);
+          transform: rotate(180deg);
         }
 
         .hamburger-menu__submenu {
