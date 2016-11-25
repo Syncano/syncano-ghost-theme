@@ -37,16 +37,6 @@
       color: #fff;
       cursor: pointer;
 
-      &.open {
-        .hamburger-menu__collapsable__icon {
-          transform: rotate(180deg);
-        }
-
-        .hamburger-menu__submenu {
-          display: block;
-        }
-      }
-
       .hamburger-menu__collapsable__title > .hamburger-menu__collapsable__icon {
         transition: .25s ease;
         margin-left: 10px;
@@ -59,6 +49,16 @@
           font-weight: 400;
           line-height: 50px;
           text-transform: capitalize;
+        }
+      }
+
+      &.open {
+        .hamburger-menu__collapsable__icon {
+          transform: rotate(180deg);
+        }
+
+        .hamburger-menu__submenu {
+          display: block;
         }
       }
     }
