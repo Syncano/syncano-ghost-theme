@@ -32,6 +32,36 @@
     a {
       text-decoration: none;
     }
+
+    &.hamburger-menu__collapsable {
+      color: #fff;
+      cursor: pointer;
+
+      .hamburger-menu__collapsable__title > .hamburger-menu__collapsable__icon {
+        transition: .25s ease;
+        margin-left: 10px;
+      }
+
+      .hamburger-menu__submenu {
+        display: none;
+
+        .hamburger-menu__submenu__item {
+          font-weight: 400;
+          line-height: 50px;
+          text-transform: capitalize;
+        }
+      }
+
+      &.open {
+        .hamburger-menu__collapsable__icon {
+          transform: rotate(180deg);
+        }
+
+        .hamburger-menu__submenu {
+          display: block;
+        }
+      }
+    }
   }
 
   .hamburger-menu__buttons {

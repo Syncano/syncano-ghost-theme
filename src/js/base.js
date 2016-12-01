@@ -363,4 +363,10 @@ jQuery(document).ready(function() {
 			}
 		});
 	});
+
+	// HAMBURGER SUB MENU
+	jQuery('.hamburger-menu__collapsable__title').on("click", function(){
+		var parent = jQuery(this).parent();
+		parent.toggleClass('open');
+	});
 });
