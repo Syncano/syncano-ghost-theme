@@ -10,7 +10,7 @@
     <div class="inner top-bar__inner">
       <div class="top-bar__logo">
         <a href="https://syncano.io/#/">
-          <img src="{{asset "img/logo.svg"}}" alt="Syncano Logo" />
+          <img src="{{asset "img/logo-white.svg"}}" alt="Syncano Logo" />
           <img class="white" src="{{asset "img/logo-white.svg"}}" alt="Syncano Logo" />
         </a>
       </div>
@@ -19,11 +19,19 @@
           <img class="jsHamburgerOpen" src="{{asset "img/hamburger.svg"}}" alt="hamburger icon" />
           <img class="close jsHamburgerClose" src="{{asset "img/close.svg"}}" alt="hamburger icon" />
         </div>
-        <div class="top-bar__nav__menu">
+        <div class="top-bar__nav__menu top-bar__nav__menu__left">
           <ul>
             <li><a class="button button--noborder" href="https://syncano.io/#/features">Product</a></li>
             <li><a class="button button--noborder" href="https://syncano.io/#/pricing">Plans & Pricing</a></li>
             <li class="top-bar__nav__menu__item--docs"><a class="button button--noborder" href="https://syncano.github.io/syncano-node-cli/#/" target="_blank">Documentation</a></li>
+            <li class="top-bar__nav__menu__item--social"><i class="fa fa-github"></i></li>
+            <li class="top-bar__nav__menu__item--social"><i class="fa fa-slack"></i></li>
+          </ul>
+        </div>
+        <div class="top-bar__nav__menu">
+          <ul>
+            <li><a class="button button--noborder button--right" href="https://syncano.io/#/signIn">Sign in</a></li>
+            <li><a class="button button--noborder button--right" href="https://syncano.io/#/signUp">Sign up</a></li>
           </ul>
         </div>
       </nav>
