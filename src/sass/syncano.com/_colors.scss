@@ -7,12 +7,13 @@ $color-main-purple: #642ee1;
 $color-main-yellow: #FFCC01;
 $color-main-yellow--hover: #FFDC4D;
 $color-main-yellow--active: #F1C000;
-$color-main-black: #1D2228;
+$color-main-black: #0B0F15;
 $color-main-graphite: #4D5966;
 $color-main-silver: #757E88;
-$color-main-gray: #F0F2F3;
+$color-main-gray: transparentize(#fff, .25);
 $color-main-red: #F0423A;
 $color-main-green: #28B12B;
+$color-main-white: #fff;
 
 // body
 $color-text-base: $color-main-graphite;
