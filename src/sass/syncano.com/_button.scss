@@ -1,23 +1,24 @@
 .button {
   display: inline-block;
   border-radius: 4px;
-  font-weight: 400;
+  font-weight: 700;
   padding: 12px;
+  text-transform: uppercase;
   font-size: 12px;
-  color: $color-main-gray;
-  border: 2px solid $color-main-gray;
+  color: $color-main-blue;
+  border: 2px solid transparentize($color-main-blue, .5);
   min-width: 170px;
   text-align: center;
   transition: $transition-default;
   cursor: pointer;
 
   &:hover {
-    color: $color-main-white;
+    color: transparentize($color-main-blue, .5);
   }
 
   &:active {
-    border-color: $color-main-white;
-    color: $color-main-white;
+    border-color: $color-main-blue;
+    color: $color-main-blue;
   }
 
   &.button--featured {
@@ -47,8 +48,8 @@
     color: #fff;
 
     &:hover {
-      background: $color-main-white;
-      border-color: $color-main-white;
+      background: $color-main-blue--hover;
+      border-color: $color-main-blue--hover;
     }
 
     &:active {
@@ -71,18 +72,14 @@
 
   &.button--noborder {
     border-color: transparent;
-
-    &:hover {
-      color: #fff;
-    }
   }
 
   &.button--white {
-    border-color: transparentize(#fff, .75);
+    border-color: transparentize(#fff, .5);
     color: #fff;
 
     &:hover {
-      color: #fff;
+      color: transparentize(#fff, .5);
     }
 
     &:active {
@@ -101,6 +98,7 @@
   }
 
   @include medium {
+    letter-spacing: -.1px;
     padding: 12px 20px;
     min-width: 140px;
 
