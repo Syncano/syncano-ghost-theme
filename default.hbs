@@ -1,77 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html lang="en">
+  <head>
+	{{! Document Settings }}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	{{! Page Meta }}
 	<title>{{meta_title}}</title>
 	<meta name="description" content="{{meta_description}}" />
+	
+	{{! favicons }}
+	<link rel="apple-touch-icon" href="{{asset "images/apple-touch-icon.png"}}" />
+    <link rel="icon" type="image/png" href="{{asset "images/favicon-32x32.png"}}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{asset "images/favicon-16x16.png"}}" sizes="16x16" />
+	
+	{{! Fonts }}
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	
+	{{! Normalizer }}
+	<link href="{{asset "css/normalize.css"}}" rel="stylesheet">
+	
+    {{! Bootstrap }}
+    <link href="{{asset "css/bootstrap.min.css"}}" rel="stylesheet">
+	
+	{{! Main Stylesheet }}
+    <link href="{{asset "css/style.css"}}" rel="stylesheet">
+	
+	{{! Fontawesome Stylesheet }}
+    <link href="{{asset "css/font-awesome.min.css"}}" rel="stylesheet">
 
-	{{#if author}}<meta name="robots" content="noindex, follow">{{/if}}
-	{{#if tag}}<meta name="robots" content="noindex, follow">{{/if}}
-
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="theme-color" content="#1c2228" />
-
-	<link rel="alternate" type="application/rss+xml" href="{{@blog.url}}/rss/">
-	<link rel="icon" type="image/png"  href="{{asset "favicon.png"}}">
-	<link rel="prefetch" href="{{@blog.url}}">
-
-	<link rel="stylesheet" type="text/css" href="{{asset "css/avenir/avenir.css"}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset "css/theme.min.css"}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
-
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-
-	{{ghost_head}}
-</head>
-<body class="{{body_class}} {{^if @blog.cover}}no-header{{/if}}">
-
-	{{> header}}
-	{{!> drawer}}
-
-	<main class="pagewrapper">
-		{{{body}}}
-		{{> footer}}
-	</main>
-
-	{{!#if post}}
-		{{!> footer_post}}
-	{{!/if}}
-
-	{{! JAVASCRIPT }}
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script async type="text/javascript" src="{{asset "js/theme.min.js"}}"></script>
-	<script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-	<script type="text/javascript">
-		$(function() {
-			$('#mc-embedded-subscribe-form').submit(function(event) {
-				event.preventDefault();
-				$('#mce-responses').children().hide();
-
-				function isEmail(email) {
-					var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-					return regex.test(email);
-				}
-
-				var subscribeEmail = $('#mce-EMAIL').val();
-
-				if (isEmail(subscribeEmail)) {
-					$(this).parent().hide();
-					$('#mce-success-response').text('Success! Check your inbox').show();
-					analytics.alias(subscribeEmail);
-					analytics.identify(subscribeEmail, {
-						email: subscribeEmail,
-						source: 'Newsletter'
-					});
-					analytics.track('Subscribed to newsletter', {email: subscribeEmail});
-				} else {
-					$('#mce-error-response').text('Please provide a valid email.').show();
-				}
-			});
-		});
-	</script>
-
-	{{ghost_foot}}
-</body>
+    {{! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries }}
+    {{! WARNING: Respond.js doesn't work if you view the page via file:// }}
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	{{! Chopstick config file }}
+	{{> config}}
+	
+	{{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+  </head>
+  <body class="{{body_class}}">
+    {{! insert header partial}}
+	{{> header}}	
+	
+	{{{body}}}
+	
+	{{! insert footer partial}}
+	{{> footer}}	
+  </body>
 </html>
